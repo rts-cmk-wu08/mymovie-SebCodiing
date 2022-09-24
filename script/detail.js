@@ -12,12 +12,12 @@ headerElm.innerHTML = `
 <a href="index.html"> <i class="fa-solid fa-arrow-left"></i></a>
 <label class="switch">
   <input type="checkbox">
-  <span class="slider round">      
-  </span>
-</label>
+  <span class="slider round"></span>
+  </label>
+  <button class="button" data-mode="light">Light</button>        
+  <button class="button" data-mode="dark">Dark</button>
 `
 wrapperElm.append(headerElm)
-
 
 
 fetch(`${BASE_URL}${id}?api_key=${API_KEY}`)
@@ -69,6 +69,5 @@ fetch(`${BASE_URL}${id}/credits?api_key=${API_KEY}`)
   castMembersElm.append(memberDiv)
   }) 
 })
-
 
 })

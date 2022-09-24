@@ -1,6 +1,11 @@
 body {
-    background-color: #464646;
-    color: #464646;
+    background-color: #282828;
+    
+    /* det virkede ikke med ændring af farve af tekst med style i 'body'
+    /* color: #DBE3FF; */
+}
+h1, h2, h3, h4, h5, h6, p{
+    color: #DBE3FF
 }
 .button{
     background-color: #282828;

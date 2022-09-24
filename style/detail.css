@@ -180,3 +180,8 @@ header i {
     font-family: 'Mulish', serif;
     text-transform: uppercase;
 }
+
+.button{
+    padding: 0.7em;
+    border-radius: 10px;
+}

@@ -10,9 +10,9 @@ let wrapperElm = document.querySelector(".wrapper")
 
 let headerElm = document.createElement("header")
 headerElm.innerHTML = `
+<button class="button" data-mode="light">Light</button>        
+<button class="button" data-mode="dark">Dark</button>
 <h1 class="myMovies">MyMovies</h1>
-<!-- <button class="button">Light</button>
-<button class="button">Dark</button> -->
 <label class="switch">
   <input type="checkbox">
   <span class="slider round">      
