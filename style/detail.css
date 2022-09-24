@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Mulish:wght@400;600;700&display=swap');
+
+html {
+    font-family: 'Mulish', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+}
+
+.heroImg{
+    width: 100%;
+    opacity: 0.9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    color: black;
+}
+.section h1 {
+    display: flex;
+}
+.section h1 i {
+    margin-left: auto;
+    margin-right: 1em;
+}
+p{
+    font-family: 'Mulish', serif;
+}
+a{
+    text-decoration: none;
+}
+
+.movie h1, .popular h1{
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+}
+
+.section {
+    padding: 5%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/* Fra W3Schools */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left: 77%;
+    top: 1.7em;
+    bottom: 16em;
+    z-index: 20;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+i {
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+}
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+}
+header i {
+    color: white;
+    position: absolute;
+    top: 1.5em;
+    left: 1em;
+}
+
+.aboutmovie{
+    color: #9C9C9C;
+}
+
+.castMembers{
+    display: flex;
+    gap: 2em;
+    width: 100%;
+    overflow-x: scroll;
+}
+.profile_path{
+    width: 105px;
+    height: 110px;
+    border-radius: 3%;
+}
+
+.seeMoreBtn{
+    width: 6.5em;
+    height: 2.3em;
+    border-radius: 3em;
+    position: relative;
+    top: -19em;
+    left: 23em;
+    color: #AAA9B1;
+    border: 1px solid #AAA9B1;
+    background-color: white;
+}
+
+
+.fa-star {
+    color: #FFC319;
+}
+
+.imdb__vote{
+    font-size: 15px;
+    color: #9C9C9C;
+}
+
+.genres{
+    width: 100%;
+    gap: 0.3em;
+}
+.genre__pill{
+    display: inline-block;
+    margin-right: 0.3em;
+    color: #88A4E8;
+    background-color: #DBE3FF;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    font-size: 10px;
+    font-family: 'Mulish', serif;
+    text-transform: uppercase;
+}
