@@ -24,7 +24,8 @@ fetch(`${BASE_URL}${id}?api_key=${API_KEY}`)
 .then(reponse => reponse.json())
 .then(data => {
     console.log(data)
-
+    let hours = Math.floor(data.runtime/60)  
+    let minutes = data.runtime % 60
 
 let pictureElm = document.createElement("div")
 pictureElm.innerHTML = `
@@ -39,6 +40,20 @@ mainElm.innerHTML = `
 <h1>${data.title}<i class="fa-solid fa-bookmark"></i></h1>
 <p class="genres"></p>
 <p class="imdb__vote"> <i class="fa-solid fa-star"></i> ${data.vote_average.toFixed(1)}/10 IMDb</p>
+<div class="info">
+  <div>
+    <p>Length</p>
+    <p>${hours}h : ${minutes}min</p>
+  </div>
+  <div>
+    <p>Language</p>
+    <p>${data.spoken_languages[0].name}</p>
+  </div>
+  <div>
+    <p>Year</p>
+    <p>${data.release_date.split("-")[0]}</p>
+  </div>
+</div>
 <h3 class="description">Description</h3>
 <p class="aboutmovie">${data.overview}</p>
 <h3 class="cast">Cast</h3>
