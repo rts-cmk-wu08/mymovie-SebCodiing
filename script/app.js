@@ -1,12 +1,12 @@
 const API_KEY = '3a4fcefe46f3db1f6864e930d246d190'
-const BASE_URL = 'https://api.themoviedb.org/3/movie/popular?api_key=a068dcb586f22a44b0c64b1b1be088eb&language=en-US&page=1'
+const BASE_URL = 'https://api.themoviedb.org/3'
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' 
 const popular = BASE_URL + '/discover/movie?sort_by=popular.desc&'
 console.log(genres)
 
 let wrapperElm = document.querySelector(".wrapper")
 
-
+let popularPage = 1
 
 let headerElm = document.createElement("header")
 headerElm.innerHTML = `
@@ -53,6 +53,7 @@ popularHeader.innerHTML = `
 popularElm.append(popularHeader)
 
 
+
 let footerNavBar = document.createElement("footer")
 footerNavBar.classList.add("footerNavBar")
 footerNavBar.innerHTML = `
@@ -64,38 +65,33 @@ footerNavBar.innerHTML = `
 wrapperElm.append(footerNavBar)
 
 
-fetch(API_URL).then(res => res.json()).then(data => {
+
+fetch(`${BASE_URL}/movie/now_playing?api_key=${API_KEY}&page=1`).then(res => res.json()).then(data => {
             console.log(data);
-            showMovies(data.results);
+            data.results.forEach(movie => {
+                const movieElm = document.createElement('div');
+                movieElm.classList.add('movie');
+                movieElm.innerHTML = `
+                <a href="detail.html?id=${movie.id}">
+                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
+                <h1>${movie.title}</h1>
+                </a>`
+        
+                showingSlider.append(movieElm)
+            })
 
 
 })
 
-fetch(popular).then(res => res.json()).then(data => {
+
+function fetchPopular(page){
+
+
+
+
+fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&page=${page}`).then(res => res.json()).then(data => {
     console.log(data);
-    popularMovies(data.results);
-
-
-})
-
-function showMovies(data) {
-    
-    data.forEach(movie => {
-        const movieElm = document.createElement('div');
-        movieElm.classList.add('movie');
-        movieElm.innerHTML = `
-        <a href="detail.html?id=${movie.id}">
-        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
-        <h1>${movie.title}</h1>
-        </a>`
-
-        showingSlider.append(movieElm)
-    })
-}
-
-function popularMovies(data) {
-
-    data.forEach(movie => {
+    data.results.forEach((movie, index) => {
         console.log(movie)
         const movieElm = document.createElement('article');
         movieElm.classList.add('popular');
@@ -119,6 +115,30 @@ function popularMovies(data) {
             genreSpan.innerText = currentGenre.name
             genreElm.append(genreSpan)
         })
-    })
+        if (index === 18) {
+
+            let intersectionObserver = new IntersectionObserver((entries) => {
+                // If intersectionRatio is 0, the target is out of view
+                // and we do not need to do anything.
+                if (entries[0].intersectionRatio <= 0) return;
+            
+                popularPage++
+                console.log('in the viewport');
+                fetchPopular(popularPage)
+                intersectionObserver.unobserve(movieElm)
+              });
+              
+              intersectionObserver.observe(movieElm)
     
+        }
+    })
+
+
+})
+
 }
+
+    fetchPopular(popularPage)
+
+    
+    

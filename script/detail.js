@@ -13,9 +13,9 @@ headerElm.innerHTML = `
 <label class="switch">
   <input type="checkbox">
   <span class="slider round"></span>
-  </label>
-  <button class="button" data-mode="light">Light</button>        
-  <button class="button" data-mode="dark">Dark</button>
+</label>
+<button class="button" data-mode="light">Light</button>        
+<button class="button" data-mode="dark">Dark</button>
 `
 wrapperElm.append(headerElm)
 

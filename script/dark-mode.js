@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function(){
         setActiveStyleSheet("light");
     }
 
-
     let lightBtnElm = document.querySelector('[data-mode="light"]');
     let darkBtnElm = document.querySelector('[data-mode="dark"]');
     
