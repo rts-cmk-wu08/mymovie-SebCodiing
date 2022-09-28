@@ -20,9 +20,6 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
 }
 
-.section {
-    border-radius: 20px 20px 0px 0px;
-}
 .section h1 {
     display: flex;
 }
@@ -45,6 +42,10 @@ a{
 .section {
     padding: 5%;
     border-radius: 10px 10px 0px 0px;
+    position: absolute;
+    top: 15rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Fra W3Schools */
@@ -145,6 +146,7 @@ header i {
     width: 105px;
     height: 110px;
     border-radius: 3%;
+    object-fit: cover;
 }
 
 .seeMoreBtn{
@@ -192,6 +194,7 @@ header i {
 
 .info{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 19em;
     line-height: 1;
 }

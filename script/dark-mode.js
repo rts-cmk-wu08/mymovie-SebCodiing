@@ -13,20 +13,22 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let savedSheet = localStorage.getItem("theme");
    
+    let switchElm = document.querySelector('.switch input')
     if(savedSheet) {
+        if (savedSheet == 'dark') {
+            switchElm.checked = true
+        }
         setActiveStyleSheet(savedSheet);
     } else {
         setActiveStyleSheet("light");
     }
 
-    let lightBtnElm = document.querySelector('[data-mode="light"]');
-    let darkBtnElm = document.querySelector('[data-mode="dark"]');
-    
-    lightBtnElm.addEventListener('click', function() {
-        setActiveStyleSheet('light')
-    });
-    darkBtnElm.addEventListener('click', function() {
-        setActiveStyleSheet('dark')
-    });
+    switchElm.addEventListener('click', function(event) {
+        if (event.target.checked) {
+            setActiveStyleSheet('dark')
+        } else {
+            setActiveStyleSheet('light')
+        }
 
+    })
 })

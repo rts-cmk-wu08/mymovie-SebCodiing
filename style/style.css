@@ -42,7 +42,7 @@ a{
     width: 175px;
     height: 250px;
     border-radius: 3%;
-    box-shadow: 5px 10px 5px rgb(137, 139, 139);
+    box-shadow: 5px 10px 5px rgba(80, 81, 81, 0.5);
 }
 
 .nowShowingHeader {
