@@ -69,6 +69,7 @@ footerNavBar.innerHTML = `
 wrapperElm.append(footerNavBar)
 
 
+// --- Fetch for Now Showing ---
 
 fetch(`${BASE_URL}/movie/now_playing?api_key=${API_KEY}&page=1`).then(res => res.json()).then(data => {
             console.log(data);
@@ -88,7 +89,7 @@ fetch(`${BASE_URL}/movie/now_playing?api_key=${API_KEY}&page=1`).then(res => res
 })
 
 
-// --- Fetch ---
+// --- Fetch for Popular ---
 
 function fetchPopular(page){
 
