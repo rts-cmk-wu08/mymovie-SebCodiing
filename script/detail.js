@@ -14,20 +14,45 @@ headerElm.innerHTML = `
   <input type="checkbox">
   <span class="slider round"></span>
 </label>
+<button class="playBtn">
+<i class="fa-solid fa-play"></i>
+</button>
+
 `
+
 wrapperElm.append(headerElm)
+
+
+fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
+.then(response => response.json())
+.then(data => {
+  console.log(data)
+
+  let myTrailer = data.results.pop()
+  let iframeDiv = document.createElement("div")
+
+  iframeDiv.innerHTML = `
+  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/${myTrailer.key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+  `
+  headerElm.append(iframeDiv)
+
+  console.log(myTrailer)
+
+})
 
 
 fetch(`${BASE_URL}${id}?api_key=${API_KEY}`)
 .then(reponse => reponse.json())
 .then(data => {
-    console.log(data)
     let hours = Math.floor(data.runtime/60)  
     let minutes = data.runtime % 60
 
 let pictureElm = document.createElement("div")
 pictureElm.innerHTML = `
-<img class="heroImg" src="https://image.tmdb.org/t/p/w500${data.backdrop_path}" alt="">
+<img class="heroImg"  src="https://image.tmdb.org/t/p/w500${data.backdrop_path}" alt="">
+
 `
 wrapperElm.append(pictureElm)
 
@@ -57,6 +82,7 @@ mainElm.innerHTML = `
 <h3 class="cast">Cast</h3>
 <div class="castMembers"></div>
 <button class="seeMoreBtn">See more</button>
+
 `
 wrapperElm.append(mainElm)
 let genreElm = mainElm.querySelector(".genres")
