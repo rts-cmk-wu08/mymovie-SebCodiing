@@ -1,0 +1,35 @@
+body {
+    background-color: #282828;
+    
+    /* det virkede ikke med ændring af farve af tekst med style i 'body'
+    /* color: #DBE3FF; */
+}
+h1, h2, h3, h4, h5, h6, p{
+    color: #DBE3FF
+}
+.button{
+    background-color: #282828;
+    color: #f5f5f5;
+    border: none;
+}
+.fa-bookmark{
+    color: #ffffff;
+}
+
+.footerNavBar {
+    background-color: #000000;
+}
+.footerNavBar i {
+    color: #ffffff;
+
+}
+.slider:before{
+    background-color: #000000;
+}
+.slider{
+    background-color: #ffffff;
+}
+.button{
+    color: #000000;
+    background-color: white;
+}

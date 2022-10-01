@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Mulish:wght@400;600;700&display=swap');
+
+html {
+    font-family: 'Mulish', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+}
+
+.heroImg{
+    width: 100%;
+    opacity: 0.9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    color: black;
+}
+
+.section h1 {
+    display: flex;
+}
+.section h1 i {
+    margin-left: auto;
+    margin-right: 1em;
+}
+p{
+    font-family: 'Mulish', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+.movie h1, .popular h1{
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+}
+
+.section {
+    padding: 5%;
+    border-radius: 10px 10px 0px 0px;
+    position: absolute;
+    top: 15rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fra W3Schools */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left: 77%;
+    top: 1.7em;
+    bottom: 16em;
+    z-index: 20;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #ccc;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+i {
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+}
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+}
+header i {
+    color: white;
+    position: absolute;
+    top: 1.5em;
+    left: 1em;
+}
+
+.aboutmovie{
+    color: #9C9C9C;
+}
+
+.castMembers{
+    display: flex;
+    gap: 2em;
+    width: 100%;
+    overflow-x: scroll;
+}
+.profile_path{
+    width: 105px;
+    height: 110px;
+    border-radius: 3%;
+    object-fit: cover;
+}
+
+.seeMoreBtn{
+    width: 6.5em;
+    height: 2.3em;
+    border-radius: 3em;
+    position: relative;
+    top: -19em;
+    left: 23em;
+    color: #AAA9B1;
+    border: 1px solid #AAA9B1;
+    background-color: white;
+}
+
+
+.fa-star {
+    color: #FFC319;
+}
+
+.imdb__vote{
+    font-size: 15px;
+    color: #9C9C9C;
+}
+
+.genres{
+    width: 100%;
+    gap: 0.3em;
+}
+.genre__pill{
+    display: inline-block;
+    margin-right: 0.3em;
+    color: #88A4E8;
+    background-color: #DBE3FF;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    font-size: 10px;
+    font-family: 'Mulish', serif;
+    text-transform: uppercase;
+}
+
+.button{
+    padding: 0.7em;
+    border-radius: 10px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    width: 19em;
+    line-height: 1;
+}
+.playBtn{
+    width: 60px;
+    height: 60px;
+    display: block;
+    border-radius: 30em;
+    border: none;
+    background-color: #FFFFFF;
+    margin: 7em auto 0;
+}
+.playTrailer{
+    font-weight: 700;
+    text-align: center;
+}
+.fa-play{
+    position: static;
+    color: #110E47;
+}
+iframe{
+    width:100vw;
+}
+/* .displayNone{
+    display: none;
+} */
+.playTrailer_text{
+    font-size: 1.2em;
+    font-family: 'Mulish', serif;
+    font-weight: 700;
+    text-align: center;
+}
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* visibility: hidden; */
+    /* transform: scale(1.1); */
+    z-index: 1000;
+    /* transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s; */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+} 
